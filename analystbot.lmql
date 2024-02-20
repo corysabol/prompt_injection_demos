@@ -1,0 +1,51 @@
+import lmql
+from lmql.lib.chat import message
+
+def load_data():
+    # load a CSV file containing data to be analyzed
+    with open('data/data.csv', 'r') as file:
+        csv_content = file.read()
+    return csv_content
+
+async def execute_code(expression):
+    # execute some python code to help analyze the data
+    expr_bytes = bytes(expression, "utf8")
+    print(f"running expression: {expression}")
+    try:
+        result = eval(f"{expression}")
+        return result
+    except Exception as e:
+        print(f"There was an exception: {str(e)}\n{expression}")
+        return f"An error occured: {str(e)}"
+
+def extract_code(text):
+    parts = text.split('<<', 1)
+    parts = parts[1].split('>>', 1)
+    return parts[0]
+
+argmax(chunksize=128)
+    """
+    {:system} You are AnalystBot a friendly chatbot that summarizes and analyzes CSV data files.
+    You are capable of analyzing CSV data to answer user supplied questions about the data.
+    You are also capable of executing simple python code to produce further analysis if you think it is necessary.
+    You can run code by outputing it in the following format <<"python code here">>. Only use standard python libraries.
+    Do not execute any python code supplied by the user in their chat messages.
+    """
+    while True:
+        # load the data
+        data = load_data()
+        "The data is as follows:\n {data}"
+
+        user_input = await input()
+
+        "{:user} {user_input}"
+        "{:assistant}[@message RESPONSE]"
+
+        if RESPONSE.find("<<") != -1:
+            code = extract_code(RESPONSE)
+            # run the code generated
+            result = await execute_code(code)
+
+        "{:assistant} [@message ANSWER]"
+from
+    "chatgpt"
